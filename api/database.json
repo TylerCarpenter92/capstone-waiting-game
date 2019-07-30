@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "tyler",
+      "email": "dude@mail.com",
+      "password": "password123"
+    },
+    {
+      "username": "d",
+      "password": "d",
+      "email": "mail@mail.com",
+      "id": 2
+    }
+  ],
+  "lists": [],
+  "list_games": [],
+  "list_movies": [],
+  "list_books": []
+}
