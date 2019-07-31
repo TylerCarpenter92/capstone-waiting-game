@@ -5,27 +5,27 @@ const remoteURL = "http://localhost:5002";
 export default Object.create(APIManager, {
   get: {
     value: function(id) {
-      return APIManager.get("users", id, remoteURL);
+      return APIManager.get("list_games", id, remoteURL);
     }
   },
   getAll: {
-    value: function() {
-      return APIManager.getAll("users", remoteURL);
+    value: function(id) {
+      return APIManager.getAll(`list_games?listId=${id}`, remoteURL);
     }
   },
   delete: {
     value: function(id) {
-      return APIManager.delete("users", id, remoteURL);
+      return APIManager.delete("list_games", id, remoteURL);
     }
   },
   post: {
     value: function(newData) {
-      return APIManager.post("users", newData, remoteURL);
+      return APIManager.post("list_games", newData, remoteURL);
     }
   },
   put: {
     value: function(editData) {
-      return APIManager.put("users", editData, remoteURL);
+      return APIManager.put("list_games", editData, remoteURL);
     }
   }
 });

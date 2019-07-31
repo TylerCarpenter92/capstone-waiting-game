@@ -3,16 +3,21 @@ import React, { Component } from "react";
 import Welcome from "./welcome/welcome";
 import Login from "./welcome/Login.js"
 import Register from "./welcome/register"
+import ShowLists from "./showLists/ShowLists"
 import UserHandler from "../modules/databaseManager/UserHandler";
+import ListHandler from "../modules/databaseManager/ListHandler";
 
 export default class ApplicationViews extends Component {
   state = {
-    users: []
+    users: [],
+    lists: []
   };
   componentDidMount() {
     let newState = {};
     UserHandler.getAll()
       .then(users => (newState.users = users))
+      .then(ListHandler.getAll)
+      .then(lists => (newState.lists = lists))
       .then(() => this.setState(newState));
   }
 
@@ -71,19 +76,36 @@ export default class ApplicationViews extends Component {
         />
         <Route
           //user page
-          path="/my list"
+          path="/myList"
           render={props => {
-            return null;
+            if (this.isAuthenticated()) {
+              return <ShowLists users={this.state.users} lists={this.state.lists} {...props} />;
+            } else {
+              return <Redirect to="/welcome" />;
+            }
           }}
         />
         <Route
           //single list page
-          path="/create list"
+          path="/createList"
           render={props => {
-            return null;
+            if (this.isAuthenticated()) {
+              return null;
+            } else {
+              return <Redirect to="/welcome" />;
+            }
           }}
         />
       </React.Fragment>
     );
   }
 }
+
+
+
+
+// if (this.isAuthenticated()) {
+//   return null;
+// } else {
+//   return <Redirect to="/welcome" />;
+// }

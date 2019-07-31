@@ -13,8 +13,61 @@
       "id": 2
     }
   ],
-  "lists": [],
-  "list_games": [],
-  "list_movies": [],
-  "list_books": []
+  "lists": [
+    {
+      "id": 1,
+      "userId": 1,
+      "gameGUID": "3030-41484",
+      "listName": "witcher 3 waiting list",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "gameGUID": "3030-4725",
+      "listName": "Metriod Prime waiting list",
+      "description": ""
+    }
+  ],
+  "list_games": [
+    {
+      "id": 1,
+      "listId": 1,
+      "gameGUID": "3030-34776",
+      "played": false,
+      "gameName": "Dragon's Dogma"
+    }
+  ],
+  "list_movies": [
+    {
+      "id": 1,
+      "listId": 1,
+      "movieNMB": "46146",
+      "watched": false,
+      "movieTitle": "Troll Hunter"
+    },
+    {
+      "id": 2,
+      "listId": 1,
+      "movieNMB": "1399",
+      "watched": false,
+      "movieTitle": "Game of Thrones"
+    }
+  ],
+  "list_books": [
+    {
+      "id": 1,
+      "listId": 1,
+      "bookNMB": "SlizBgAAQBAJ",
+      "read": false,
+      "bookTitle": "The Blade Itself"
+    },
+    {
+      "id": 2,
+      "listId": 2,
+      "bookNMB": "SlizBgAAQBAJ",
+      "read": false,
+      "bookTitle": "The Blade Itself"
+    }
+  ]
 }
