@@ -1,13 +1,16 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import Welcome from "./welcome/welcome";
 import Login from "./welcome/Login.js"
 import Register from "./welcome/register"
 import ShowLists from "./showLists/ShowLists"
+import FullList from "./fullList/FullList"
+import MainPage from "./mainPage/MainPage"
 import UserHandler from "../modules/databaseManager/UserHandler";
 import ListHandler from "../modules/databaseManager/ListHandler";
 
-export default class ApplicationViews extends Component {
+class ApplicationViews extends Component {
   state = {
     users: [],
     lists: []
@@ -41,7 +44,7 @@ export default class ApplicationViews extends Component {
           path="/"
           render={props => {
             if (this.isAuthenticated()) {
-              return null;
+              return <MainPage users={this.state.users} lists={this.state.lists} {...props} />;
             } else {
               return <Redirect to="/welcome" />;
             }
@@ -86,6 +89,18 @@ export default class ApplicationViews extends Component {
           }}
         />
         <Route
+          //user page
+          path="/List/:listId(\d+)"
+          render={props => {
+            if (this.isAuthenticated()) {
+
+              return <FullList  {...props} />;
+            } else {
+              return <Redirect to="/welcome" />;
+            }
+          }}
+        />
+        <Route
           //single list page
           path="/createList"
           render={props => {
@@ -100,6 +115,8 @@ export default class ApplicationViews extends Component {
     );
   }
 }
+
+export default withRouter(ApplicationViews);
 
 
 

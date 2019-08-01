@@ -5,7 +5,7 @@ const remoteURL = "http://localhost:5002";
 export default Object.create(APIManager, {
   get: {
     value: function(id) {
-      return APIManager.get("users", id, remoteURL);
+      return APIManager.getOne("users", id, remoteURL);
     }
   },
   getAll: {

@@ -35,7 +35,7 @@
       "listId": 1,
       "gameGUID": "3030-34776",
       "played": false,
-      "gameName": "Dragon's Dogma"
+      "title": "Dragon's Dogma"
     }
   ],
   "list_movies": [
@@ -44,14 +44,14 @@
       "listId": 1,
       "movieNMB": "46146",
       "watched": false,
-      "movieTitle": "Troll Hunter"
+      "title": "Troll Hunter"
     },
     {
       "id": 2,
       "listId": 1,
       "movieNMB": "1399",
       "watched": false,
-      "movieTitle": "Game of Thrones"
+      "title": "Game of Thrones"
     }
   ],
   "list_books": [
@@ -60,14 +60,14 @@
       "listId": 1,
       "bookNMB": "SlizBgAAQBAJ",
       "read": false,
-      "bookTitle": "The Blade Itself"
+      "title": "The Blade Itself"
     },
     {
       "id": 2,
       "listId": 2,
       "bookNMB": "SlizBgAAQBAJ",
       "read": false,
-      "bookTitle": "The Blade Itself"
+      "title": "The Blade Itself"
     }
   ]
 }
