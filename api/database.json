@@ -17,6 +17,7 @@
     {
       "id": 1,
       "userId": 1,
+      "siteId": 41484,
       "gameGUID": "3030-41484",
       "listName": "witcher 3 waiting list",
       "description": ""
@@ -24,6 +25,7 @@
     {
       "id": 2,
       "userId": 1,
+      "siteId": 4725,
       "gameGUID": "3030-4725",
       "listName": "Metriod Prime waiting list",
       "description": ""
@@ -45,13 +47,6 @@
       "movieNMB": "46146",
       "watched": false,
       "title": "Troll Hunter"
-    },
-    {
-      "id": 2,
-      "listId": 1,
-      "movieNMB": "1399",
-      "watched": false,
-      "title": "Game of Thrones"
     }
   ],
   "list_books": [

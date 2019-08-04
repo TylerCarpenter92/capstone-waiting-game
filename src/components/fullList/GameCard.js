@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
 import "./FullList.css";
 
-export default class GameSnipIt extends Component {
+export default class GameCard extends Component {
   render() {
     return (
-      <div key={this.props.list.id} className="card">
-        <h4>{this.props.gameHolder.results.name}</h4>
+      <div key={this.props.game.id} className="card">
+        <h4>{this.props.game.results.name}</h4>
         <section className="card-body gameCard">
-          {this.props.gameHolder.results.deck}
+          {this.props.game.results.deck}
+          {/* <td dangerouslySetInnerHTML={{__html: this.props.game.results.description}} /> */}
           <img
             className="img"
-            src={this.props.gameHolder.results.image.thumb_url}
+            src={this.props.game.results.image.small_url}
             alt=""
           />
         </section>
