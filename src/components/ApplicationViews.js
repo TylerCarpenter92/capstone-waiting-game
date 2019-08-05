@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import Welcome from "./welcome/welcome";
 import Login from "./welcome/Login.js"
 import Register from "./welcome/register"
-import ShowLists from "./showLists/ShowLists"
+import ShowLists from "./showLists/ShowYourLists"
 import FullList from "./fullList/FullList"
 import MainPage from "./mainPage/MainPage"
 import SearchPage from "./search/SearchPage"
@@ -83,7 +83,8 @@ class ApplicationViews extends Component {
           path="/myList"
           render={props => {
             if (this.isAuthenticated()) {
-              return <ShowLists users={this.state.users} lists={this.state.lists} {...props} />;
+              let userList = this.state.lists.filter(list => list.userId === +sessionStorage.getItem("userId"))
+              return <ShowLists  lists={userList} {...props} />;
             } else {
               return <Redirect to="/welcome" />;
             }

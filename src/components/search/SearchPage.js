@@ -16,7 +16,7 @@ export default class SearchPage extends Component {
     this.setState(stateToChange);
   };
 
-  searchGames = evt => {
+  searchGames = () => {
     let newState = this.state;
     gameManager
       .searchGame(this.state.search, this.state.pageNMB)
@@ -27,6 +27,12 @@ export default class SearchPage extends Component {
         this.setState(newState);
       });
   };
+
+  _handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      this.searchGames()
+    }
+  }
 
   render() {
     console.log(this.state);
@@ -41,6 +47,7 @@ export default class SearchPage extends Component {
             value={this.state.message}
             onChange={this.handleFieldChange}
             placeholder="enter here"
+            onKeyDown={this._handleKeyDown}
           />
           <button onClick={this.searchGames}>search</button>
         </fieldset>
