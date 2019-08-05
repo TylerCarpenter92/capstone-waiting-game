@@ -7,6 +7,7 @@ import Register from "./welcome/register"
 import ShowLists from "./showLists/ShowLists"
 import FullList from "./fullList/FullList"
 import MainPage from "./mainPage/MainPage"
+import SearchPage from "./search/SearchPage"
 import UserHandler from "../modules/databaseManager/UserHandler";
 import ListHandler from "../modules/databaseManager/ListHandler";
 
@@ -105,7 +106,7 @@ class ApplicationViews extends Component {
           path="/createList"
           render={props => {
             if (this.isAuthenticated()) {
-              return null;
+              return <SearchPage {...props} />
             } else {
               return <Redirect to="/welcome" />;
             }

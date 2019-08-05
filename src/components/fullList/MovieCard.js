@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Spinner from "react-bootstrap/Spinner";
-import "./MovieCard.css";
+import "./FullList.css";
 import movieManager from "../../modules/movieManager";
 
 export default class MovieCard extends Component {

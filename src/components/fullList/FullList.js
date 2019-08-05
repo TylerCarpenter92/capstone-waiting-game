@@ -10,8 +10,8 @@ import gameManager from "../../modules/gameManager";
 import movieManager from "../../modules/movieManager";
 import bookManager from "../../modules/bookManager";
 import GameCard from "./GameCard";
-import MovieCard from "../movieCard/MovieCard";
-import BookCard from "../bookCard/BookCard";
+import MovieCard from "./MovieCard";
+import BookCard from "./BookCard";
 
 export default class FullList extends Component {
   state = {
@@ -38,6 +38,10 @@ export default class FullList extends Component {
     return movieDetailsArray;
   };
 
+  foo () {
+    console.log("here in foo")
+  }
+
   fetchGames = list => {
     let gameDetailsArray = [];
     list.forEach(listGame => {
@@ -45,6 +49,7 @@ export default class FullList extends Component {
         gameDetailsArray.push(game);
       });
     });
+    setTimeout(this.foo,100)
     return gameDetailsArray;
   };
 
@@ -76,7 +81,8 @@ export default class FullList extends Component {
         .then(() => gameManager.get(newState.list.gameGUID))
         .then(game => (newState.gameHolder = game))
         .then(() => {
-          console.log(newState);
+          console.log(Date.now())
+          console.log(Date.now());
           this.setState(newState);
         });
     } else {
@@ -84,7 +90,6 @@ export default class FullList extends Component {
       newState.listBookDetails = [];
       newState.listMovieDetails = [];
       newState.listGameDetails = [];
-      console.log(newState);
       newState.isLoaded = true;
       newState.listBooks.forEach(listBook => {
         bookManager
@@ -148,7 +153,7 @@ export default class FullList extends Component {
               <h3>{this.state.list.listName}: Games</h3>
               {this.state.listGameDetails.map(game => {
                 return (
-                  <GameCard key={game.id} list={this.state.list} game={game} />
+                  <GameCard key={game.results.id} list={this.state.list} game={game} />
                 )
               })}
             </div>
