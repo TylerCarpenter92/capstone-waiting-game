@@ -74,7 +74,7 @@ export default class Register extends Component {
           />
           <input
             onChange={this.handleFieldChange}
-            type="text"
+            type="password"
             placeholder="Password"
             id="password"
             className="form-control"

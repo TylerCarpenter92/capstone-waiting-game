@@ -1,0 +1,26 @@
+.listCard{
+  display: flex;
+
+}
+
+.img{
+  margin: 30px;
+  width: 20%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listItem{
+  flex-direction: column
+}
+
+.linkTag{
+  display: flex;
+  align-self: flex-end;
+}
