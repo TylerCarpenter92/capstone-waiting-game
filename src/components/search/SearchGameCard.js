@@ -18,7 +18,7 @@ export default class SearchGameCard extends Component {
             alt=""
           />
         </section>
-        <button onClick={() => console.log("clicked")}>Build list with this game</button>
+        <button onClick={() => this.props.createList(this.props.results)}>Build list with this game</button>
       </div>
     );
   }

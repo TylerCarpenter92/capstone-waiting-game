@@ -29,6 +29,20 @@
       "gameGUID": "3030-4725",
       "listName": "Metriod Prime waiting list",
       "description": ""
+    },
+    {
+      "userId": 1,
+      "siteId": 38456,
+      "gameGUID": "3030-38456",
+      "listName": "Cyberpunk 2077 Waiting List",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "siteId": 10473,
+      "gameGUID": "3030-10473",
+      "listName": "The Witcher Waiting List",
+      "id": 4
     }
   ],
   "list_games": [
@@ -53,13 +67,6 @@
     {
       "id": 1,
       "listId": 1,
-      "bookNMB": "SlizBgAAQBAJ",
-      "read": false,
-      "title": "The Blade Itself"
-    },
-    {
-      "id": 2,
-      "listId": 2,
       "bookNMB": "SlizBgAAQBAJ",
       "read": false,
       "title": "The Blade Itself"

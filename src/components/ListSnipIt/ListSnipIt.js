@@ -69,6 +69,26 @@ export default class ListSnipIt extends Component {
           ) : (
             <Spinner animation="grow" size="sm" />
           )}
+          {this.props.isUser ? (
+            <Link
+              className="linkTag"
+              to={{
+                pathname: `/list/${this.props.list.id}/edit`,
+                list: this.props.list,
+                listInfo: {
+                  list: this.props.list,
+                  listGames: this.state.listGames,
+                  listBooks: this.state.listBooks,
+                  listMovies: this.state.listMovies,
+                  gameHolder: this.state.gameHolder
+                }
+              }}
+            >
+              edit
+            </Link>
+          ) : (
+            ""
+          )}
           <Link
             className="linkTag"
             to={{

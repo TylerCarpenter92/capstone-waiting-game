@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./FullList.css";
 import Spinner from "react-bootstrap/Spinner";
 import ListHandler from "../../modules/databaseManager/ListHandler";
-import ListMoviesHandler from "../../modules/databaseManager/ListMovieHandler";
+import ListMovieHandler from "../../modules/databaseManager/ListMovieHandler";
 import ListBookHandler from "../../modules/databaseManager/ListBookHandler";
 import ListGameHandler from "../../modules/databaseManager/ListGameHandler";
 import GameCard from "./GameCard";
@@ -14,8 +14,6 @@ export default class FullList extends Component {
   state = {
     isLoaded: false
   };
-
-
 
   componentDidMount() {
     let id = this.props.match.params.listId;
@@ -28,7 +26,7 @@ export default class FullList extends Component {
         .then(listBooks => (newState.listBooks = listBooks))
         .then(() => ListGameHandler.getAll(newState.list.id))
         .then(listGames => (newState.listGames = listGames))
-        .then(() => ListMoviesHandler.getAll(newState.list.id))
+        .then(() => ListMovieHandler.getAll(newState.list.id))
         .then(listMovies => (newState.listMovies = listMovies))
         .then(() => {
           this.setState(newState);
@@ -40,9 +38,23 @@ export default class FullList extends Component {
     }
   }
 
-  
+  deleteBook = id => {
+    ListBookHandler.delete(id)
+    .then(() => ListBookHandler.getAll(this.state.list.id))
+    .then(listBooks => this.setState({listBooks: listBooks}))
+  }
 
+  deleteMovie = id => {
+    ListMovieHandler.delete(id)
+    .then(() => ListMovieHandler.getAll(this.state.list.id))
+    .then(listMovies => this.setState({listMovies: listMovies}))
+  }
 
+  deleteGame = id => {
+    ListGameHandler.delete(id)
+    .then(() => ListGameHandler.getAll(this.state.list.id))
+    .then(listMovies => this.setState({listMovies: listMovies}))
+  }
 
   render() {
     return (
@@ -51,16 +63,19 @@ export default class FullList extends Component {
           <React.Fragment>
             <div>
               <h1>{this.state.list.listName}</h1>
-              {this.state.list.userId === +sessionStorage.getItem("userId") ? (
-                <button onClick={() => this.props.history.push(`/List/${this.state.list.id}/edit`)}>edit list</button>
-              ): (null)}
-              <GameCard game={this.state.list} />
+              <GameCard
+                list={this.state.list}
+                game={this.state.list}
+              />
             </div>
             <div className="card">
               <h3>{this.state.list.listName}: Movies</h3>
+              <button onClick={() => console.log("click")}>add</button>
               {this.state.listMovies.map(movie => {
                 return (
                   <MovieCard
+                  deleteMovie={this.deleteMovie}
+                    isEdit={true}
                     key={movie.id}
                     list={this.state.list}
                     movie={movie}
@@ -70,9 +85,12 @@ export default class FullList extends Component {
             </div>
             <div className="card">
               <h3>{this.state.list.listName}: Books</h3>
+              <button onClick={() => console.log("click")}>add</button>
               {this.state.listBooks.map(book => {
                 return (
                   <BookCard
+                  deleteBook={this.deleteBook}
+                    isEdit={true}
                     key={book.id}
                     isLoaded={this.state.isLoaded}
                     list={this.state.list}
@@ -83,9 +101,16 @@ export default class FullList extends Component {
             </div>
             <div className="card">
               <h3>{this.state.list.listName}: Games</h3>
+              <button onClick={() => console.log("click")}>add</button>
               {this.state.listGames.map(game => {
                 return (
-                  <GameCard key={game.id} list={this.state.list} game={game} />
+                  <GameCard
+                  deleteGame={this.deleteGame}
+                    isEdit={true}
+                    key={game.id}
+                    list={this.state.list}
+                    game={game}
+                  />
                 );
               })}
             </div>

@@ -20,7 +20,8 @@ export default Object.create(APIManager, {
   },
   post: {
     value: function(newData) {
-      return APIManager.post("lists", newData, remoteURL);
+      return APIManager.post("lists", newData, remoteURL)
+      .then(this.getAll)
     }
   },
   put: {
