@@ -39,10 +39,24 @@
     },
     {
       "userId": 1,
-      "siteId": 10473,
-      "gameGUID": "3030-10473",
-      "listName": "The Witcher Waiting List",
-      "id": 4
+      "siteId": 54232,
+      "gameGUID": "3030-54232",
+      "listName": "Death Stranding Waiting List",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "siteId": 70240,
+      "gameGUID": "3030-70240",
+      "listName": "Luigi's Mansion 3 Waiting List",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "siteId": 54232,
+      "gameGUID": "3030-54232",
+      "listName": "Death Stranding Waiting List",
+      "id": 7
     }
   ],
   "list_games": [
@@ -61,6 +75,27 @@
       "movieNMB": "46146",
       "watched": false,
       "title": "Troll Hunter"
+    },
+    {
+      "listId": 6,
+      "movieNMB": 257445,
+      "watched": false,
+      "title": "Goosebumps",
+      "id": 2
+    },
+    {
+      "listId": 7,
+      "movieNMB": 157336,
+      "watched": false,
+      "title": "Interstellar",
+      "id": 3
+    },
+    {
+      "listId": 7,
+      "movieNMB": 27205,
+      "watched": false,
+      "title": "Inception",
+      "id": 4
     }
   ],
   "list_books": [
@@ -70,6 +105,41 @@
       "bookNMB": "SlizBgAAQBAJ",
       "read": false,
       "title": "The Blade Itself"
+    },
+    {
+      "listId": 1,
+      "bookNMB": "fNwd1yO4UeIC",
+      "read": false,
+      "title": "Summers at Castle Auburn",
+      "id": 2
+    },
+    {
+      "listId": 1,
+      "bookNMB": "zre8utGXBZQC",
+      "read": false,
+      "title": "The Eyes of the Dragon",
+      "id": 3
+    },
+    {
+      "listId": 3,
+      "bookNMB": "5n8tDwAAQBAJ",
+      "read": false,
+      "title": "Feed",
+      "id": 4
+    },
+    {
+      "listId": 5,
+      "bookNMB": "FY_HWAcm10MC",
+      "read": false,
+      "title": "Ready Player One",
+      "id": 5
+    },
+    {
+      "listId": 5,
+      "bookNMB": "jaM7DwAAQBAJ",
+      "read": false,
+      "title": "Ender's Game",
+      "id": 6
     }
   ]
 }

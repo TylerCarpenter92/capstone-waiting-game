@@ -35,6 +35,7 @@ export default class ListSnipIt extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
       <div key={this.props.list.id} className="card">
         <div className="card-body listCard">
@@ -80,7 +81,7 @@ export default class ListSnipIt extends Component {
                   listGames: this.state.listGames,
                   listBooks: this.state.listBooks,
                   listMovies: this.state.listMovies,
-                  gameHolder: this.state.gameHolder
+                  gameResults: this.state.gameHolder
                 }
               }}
             >

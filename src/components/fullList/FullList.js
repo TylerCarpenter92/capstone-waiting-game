@@ -40,7 +40,9 @@ export default class FullList extends Component {
     }
   }
 
-  
+  pushToEdit(){
+    this.props.history.push(`/List/${this.state.list.id}/edit`)
+  }
 
 
 
@@ -52,7 +54,7 @@ export default class FullList extends Component {
             <div>
               <h1>{this.state.list.listName}</h1>
               {this.state.list.userId === +sessionStorage.getItem("userId") ? (
-                <button onClick={() => this.props.history.push(`/List/${this.state.list.id}/edit`)}>edit list</button>
+                <button onClick={()=> this.pushToEdit()}>edit list</button>
               ): (null)}
               <GameCard game={this.state.list} />
             </div>

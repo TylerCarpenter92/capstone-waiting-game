@@ -1,33 +1,26 @@
 import React, { Component } from "react";
 import "./FullList.css";
 import bookManager from "../../modules/bookManager";
-import Spinner from "react-bootstrap/Spinner"
-export default class MovieCard extends Component {
+import Spinner from "react-bootstrap/Spinner";
+
+
+export default class BookCard extends Component {
   state = {
     isLoaded: false
   };
 
   componentDidMount() {
-      let bookState = {
-        isLoaded: true
-      };
-      bookManager
-        .getBook(this.props.book.bookNMB)
-        .then(bookDetails => (bookState.bookDetails = bookDetails))
-        .then(() => this.setState(bookState));
+    let bookState = {
+      isLoaded: true
+    };
+    bookManager
+      .getBook(this.props.book.bookNMB)
+      .then(bookDetails => (bookState.bookDetails = bookDetails))
+      .then(() => this.setState(bookState));
   }
 
-  // getBookDetails = book => {
-  //   let bookState = {
-  //     isLoaded: true
-  //   };
-  //   bookManager
-  //     .getBook(book.bookNMB)
-  //     .then(bookDetails => (bookState.bookDetails = bookDetails))
-  //     .then(() => this.setState(bookState));
-  // };
-
   render() {
+    console.log(this.state)
     return (
       <div key={this.props.book.id} className="card">
         <h4>{this.props.book.title}</h4>
@@ -41,9 +34,13 @@ export default class MovieCard extends Component {
                 src={this.state.bookDetails.volumeInfo.imageLinks.small}
                 alt=""
               />
-            {this.props.isEdit ? (
-              <button onClick={() => this.props.deleteBook(this.props.book.id) }>delete</button>
-            ) : (null)}
+              {this.props.isEdit ? (
+                <button
+                  onClick={() => this.props.deleteBook(this.props.book.id)}
+                >
+                  delete
+                </button>
+              ) : null}
             </section>
           </React.Fragment>
         ) : (
