@@ -35,12 +35,12 @@ export default class MovieCard extends Component {
           <React.Fragment>
             <h4>{this.state.movieDetails.title}</h4>
             <section className="card-body gameCard">
-              {this.state.movieDetails.overview}
+              <div> {this.state.movieDetails.overview}</div>
               <img className="img" src={this.generateImage()} alt="" />
-              {this.props.isEdit ? (
-              <button onClick={() => this.props.deleteMovie(this.props.movie.id) }>delete</button>
-            ) : (null)}
             </section>
+              {this.props.isEdit ? (
+              <button className="deleteBtn" onClick={() => this.props.deleteMovie(this.props.movie.id) }>delete</button>
+            ) : (null)}
           </React.Fragment>
         ) : (
           <Spinner animation="grow" size="sm" />

@@ -25,20 +25,26 @@ export default class GameCard extends Component {
         {this.state.isLoaded ? (
           <React.Fragment>
             <section className="card-body gameCard">
-              {this.state.gameDetails.results.deck}
+              <div>{this.state.gameDetails.results.deck}</div>
+
               {/* <td className="card"
             dangerouslySetInnerHTML={{
               __html: this.state.gameDetails.results.description
             }}
           /> */}
+
               <img
                 className="img"
                 src={this.state.gameDetails.results.image.small_url}
                 alt=""
               />
               {this.props.isEdit ? (
-              <button onClick={() => this.props.deleteGame(this.props.game.id) }>delete</button>
-            ) : (null)}
+                <button
+                  onClick={() => this.props.deleteGame(this.props.game.id)}
+                >
+                  delete
+                </button>
+              ) : null}
             </section>
           </React.Fragment>
         ) : (
@@ -48,5 +54,3 @@ export default class GameCard extends Component {
     );
   }
 }
-
-

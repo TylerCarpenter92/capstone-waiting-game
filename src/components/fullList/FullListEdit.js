@@ -161,10 +161,10 @@ export default class FullListEdit extends Component {
                 );
               })}
             </div>
-            <div className="card">
-              <h3>{this.state.list.listName}: Games</h3>
+            {/* <div className="card">
+              <h3>{this.state.list.listName}: Games</h3> */}
               {/* <button onClick={() => console.log("click")}>add</button> */}
-              <AddGameModal gameData={this.state.gameResults} />
+              {/* <AddGameModal gameData={this.state.gameResults} />
               {this.state.listGames.map(game => {
                 return (
                   <GameCard
@@ -176,7 +176,7 @@ export default class FullListEdit extends Component {
                   />
                 );
               })}
-            </div>
+            </div> */}
           </React.Fragment>
         ) : (
           <Spinner animation="grow" />

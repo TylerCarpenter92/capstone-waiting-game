@@ -71,7 +71,9 @@ export default class AddBookModal extends Component {
           toggle={this.toggle}
           className={this.props.className}
         >
-          <ModalHeader toggle={this.toggle}>Book Suggestions for {this.props.gameData.results.name}</ModalHeader>
+          <ModalHeader toggle={this.toggle}>
+            Book Suggestions for {this.props.gameData.results.name}
+          </ModalHeader>
           <ModalBody>
             {this.state.isLoaded
               ? this.state.books.items.map(bookItem => {
@@ -92,15 +94,29 @@ export default class AddBookModal extends Component {
               onClosed={this.state.closeAll ? this.toggle : undefined}
             >
               <ModalHeader>{this.state.title}</ModalHeader>
-              <ModalBody>{this.state.description}</ModalBody>
+              <ModalBody>
+                <div>
+                  <td
+                    dangerouslySetInnerHTML={{
+                      __html: this.state.description
+                    }}
+                  />
+                </div>
+              </ModalBody>
               <ModalFooter>
-                <Button color="primary" onClick={() =>{
-                   this.props.createListBook(this.state.thisBook)
-                   this.toggleNested({}, "", "")
-                }}>
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    this.props.createListBook(this.state.thisBook);
+                    this.toggleNested({}, "", "");
+                  }}
+                >
                   Add Book to List
                 </Button>{" "}
-                <Button color="secondary" onClick={() => this.toggleNested({}, "", "")}>
+                <Button
+                  color="secondary"
+                  onClick={() => this.toggleNested({}, "", "")}
+                >
                   Back
                 </Button>
               </ModalFooter>

@@ -15,14 +15,6 @@
   ],
   "lists": [
     {
-      "id": 1,
-      "userId": 1,
-      "siteId": 41484,
-      "gameGUID": "3030-41484",
-      "listName": "witcher 3 waiting list",
-      "description": ""
-    },
-    {
       "id": 2,
       "userId": 2,
       "siteId": 4725,
@@ -53,73 +45,58 @@
     },
     {
       "userId": 1,
-      "siteId": 54232,
-      "gameGUID": "3030-54232",
-      "listName": "Death Stranding Waiting List",
+      "siteId": 41484,
+      "gameGUID": "3030-41484",
+      "listName": "The Witcher 3: Wild Hunt Waiting List",
       "id": 7
     }
   ],
-  "list_games": [
-    {
-      "id": 1,
-      "listId": 1,
-      "gameGUID": "3030-34776",
-      "played": false,
-      "title": "Dragon's Dogma"
-    }
-  ],
+  "list_games": [],
   "list_movies": [
-    {
-      "id": 1,
-      "listId": 1,
-      "movieNMB": "46146",
-      "watched": false,
-      "title": "Troll Hunter"
-    },
     {
       "listId": 6,
       "movieNMB": 257445,
       "watched": false,
       "title": "Goosebumps",
+      "id": 1
+    },
+    {
+      "listId": 7,
+      "movieNMB": 284053,
+      "watched": false,
+      "title": "Thor: Ragnarok",
       "id": 2
     },
     {
       "listId": 7,
+      "movieNMB": 120,
+      "watched": false,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "id": 3
+    },
+    {
+      "listId": 3,
+      "movieNMB": 399579,
+      "watched": false,
+      "title": "Alita: Battle Angel",
+      "id": 4
+    },
+    {
+      "listId": 3,
+      "movieNMB": 335984,
+      "watched": false,
+      "title": "Blade Runner 2049",
+      "id": 5
+    },
+    {
+      "listId": 5,
       "movieNMB": 157336,
       "watched": false,
       "title": "Interstellar",
-      "id": 3
-    },
-    {
-      "listId": 7,
-      "movieNMB": 27205,
-      "watched": false,
-      "title": "Inception",
-      "id": 4
+      "id": 6
     }
   ],
   "list_books": [
-    {
-      "id": 1,
-      "listId": 1,
-      "bookNMB": "SlizBgAAQBAJ",
-      "read": false,
-      "title": "The Blade Itself"
-    },
-    {
-      "listId": 1,
-      "bookNMB": "fNwd1yO4UeIC",
-      "read": false,
-      "title": "Summers at Castle Auburn",
-      "id": 2
-    },
-    {
-      "listId": 1,
-      "bookNMB": "zre8utGXBZQC",
-      "read": false,
-      "title": "The Eyes of the Dragon",
-      "id": 3
-    },
     {
       "listId": 3,
       "bookNMB": "5n8tDwAAQBAJ",
@@ -140,6 +117,34 @@
       "read": false,
       "title": "Ender's Game",
       "id": 6
+    },
+    {
+      "listId": 5,
+      "bookNMB": "UbfnTcmkaKkC",
+      "read": false,
+      "title": "The Stand",
+      "id": 8
+    },
+    {
+      "listId": 7,
+      "bookNMB": "zre8utGXBZQC",
+      "read": false,
+      "title": "The Eyes of the Dragon",
+      "id": 9
+    },
+    {
+      "listId": 7,
+      "bookNMB": "Zgj5OmP9b8IC",
+      "read": false,
+      "title": "The Way of Shadows",
+      "id": 11
+    },
+    {
+      "listId": 6,
+      "bookNMB": "Yu3SuiqituMC",
+      "read": false,
+      "title": "John Dies at the End",
+      "id": 12
     }
   ]
 }

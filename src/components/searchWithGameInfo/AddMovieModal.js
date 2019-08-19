@@ -74,7 +74,7 @@ export default class AddMovieModal extends Component {
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>
-          Add Books
+          Add Movies
         </Button>
         <Modal
           isOpen={this.state.modal}

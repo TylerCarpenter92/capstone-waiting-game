@@ -35,26 +35,32 @@ export default class ListSnipIt extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
-      <div key={this.props.list.id} className="card">
+      <div key={this.props.list.id} className="card list-snipit-card">
+        <h4 className="card-title">{this.props.list.listName}</h4>
         <div className="card-body listCard">
-          <h5>{this.props.list.listName}</h5>
           {this.state.isLoaded ? (
             <React.Fragment>
-              <p>{this.state.gameHolder.results.name} </p>
+              {/* <p>{this.state.gameHolder.results.name} </p> */}
 
-              <div className="container">
+              {/* <div className="container">
+                <h5>list of games</h5>
                 <ul className="listItem">
                   {this.state.listGames.map(listGame =>
                     this.displayList(listGame)
                   )}
                 </ul>
+              </div> */}
+              <div className="container">
+                <h5>list of Books</h5>
                 <ul className="listItem">
                   {this.state.listBooks.map(listBook =>
                     this.displayList(listBook)
                   )}
                 </ul>
+              </div>
+              <div className="container">
+                <h5>list of Movies</h5>
                 <ul className="listItem">
                   {this.state.listMovies.map(listMovie =>
                     this.displayList(listMovie)
@@ -70,7 +76,10 @@ export default class ListSnipIt extends Component {
           ) : (
             <Spinner animation="grow" size="sm" />
           )}
-          {this.props.isUser ? (
+
+
+        </div>
+        {this.props.isUser ? (
             <Link
               className="linkTag"
               to={{
@@ -85,12 +94,10 @@ export default class ListSnipIt extends Component {
                 }
               }}
             >
-              edit
+              View Your List
             </Link>
           ) : (
-            ""
-          )}
-          <Link
+            <Link
             className="linkTag"
             to={{
               pathname: `/list/${this.props.list.id}`,
@@ -104,9 +111,9 @@ export default class ListSnipIt extends Component {
               }
             }}
           >
-            info
+            View List
           </Link>
-        </div>
+          )}
       </div>
     );
   }

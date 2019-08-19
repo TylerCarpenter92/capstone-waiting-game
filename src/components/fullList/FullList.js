@@ -83,14 +83,14 @@ export default class FullList extends Component {
                 );
               })}
             </div>
-            <div className="card">
+            {/* <div className="card">
               <h3>{this.state.list.listName}: Games</h3>
               {this.state.listGames.map(game => {
                 return (
                   <GameCard key={game.id} list={this.state.list} game={game} />
                 );
               })}
-            </div>
+            </div> */}
           </React.Fragment>
         ) : (
           <Spinner animation="grow" />
