@@ -69,10 +69,11 @@ class ApplicationViews extends Component {
           path="/"
           render={props => {
             if (this.isAuthenticated()) {
+              let newLists = this.state.lists.reverse()
               return (
                 <MainPage
                   users={this.state.users}
-                  lists={this.state.lists}
+                  lists={newLists}
                   {...props}
                 />
               );
@@ -116,8 +117,8 @@ class ApplicationViews extends Component {
               let userList = this.state.lists
                 .filter(
                   list => list.userId === +sessionStorage.getItem("userId")
-                )
-                .sort((curr, next) => curr.id - next.id);
+                ).reverse()
+                // .sort((curr, next) => curr.id - next.id);
               return <ShowLists lists={userList} {...props} />;
             } else {
               return <Redirect to="/welcome" />;

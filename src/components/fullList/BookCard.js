@@ -26,13 +26,13 @@ export default class BookCard extends Component {
         {this.state.isLoaded ? (
           <React.Fragment>
             <section className="card-body gameCard">
-              <div>
-                <td
+
+                <div
                   dangerouslySetInnerHTML={{
                     __html: this.state.bookDetails.volumeInfo.description
                   }}
                 />
-              </div>
+              
 
               {/* {this.state.bookDetails.volumeInfo.description} */}
               <img

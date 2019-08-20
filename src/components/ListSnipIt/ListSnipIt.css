@@ -6,7 +6,6 @@
 .img{
   margin: 30px;
   width: 20%;
-  height: auto;
   display: flex;
   justify-content: flex-end;
 }
@@ -26,6 +25,8 @@
 }
 
 .list-snipit-card{
+  margin: 5px;
   width: 1000px;
-  
+  display: flex;
+
 }

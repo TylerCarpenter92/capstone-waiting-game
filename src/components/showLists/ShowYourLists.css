@@ -1,0 +1,6 @@
+.list-all{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+}
