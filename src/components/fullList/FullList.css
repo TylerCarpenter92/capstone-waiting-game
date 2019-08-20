@@ -1,3 +1,13 @@
 .gameCard{
   display: flex;
+  justify-content: space-between
+}
+
+.img{
+  display: flex;
+  align-self: baseline;
+}
+
+.deleteBtn{
+  align-self: flex-end;
 }

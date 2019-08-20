@@ -15,12 +15,14 @@ export default Object.create(APIManager, {
   },
   delete: {
     value: function(id) {
-      return APIManager.delete("lists", id, remoteURL);
+      return APIManager.delete("lists", id, remoteURL)
+      .then(this.getAll)
     }
   },
   post: {
     value: function(newData) {
-      return APIManager.post("lists", newData, remoteURL);
+      return APIManager.post("lists", newData, remoteURL)
+      .then(this.getAll)
     }
   },
   put: {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import gameManager from "../../modules/gameManager";
-import Spinner from "react-bootstrap/Spinner";
 import SearchGameCard from "./SearchGameCard"
 
 export default class SearchPage extends Component {
@@ -56,7 +55,7 @@ export default class SearchPage extends Component {
         {this.state.isSearched ? (
           <React.Fragment>
             {this.state.searchResults.results.map(results => {
-              return <SearchGameCard key={results.id}  results={results} />
+              return <SearchGameCard key={results.id}  results={results}  {...this.props} />
             })}
           </React.Fragment>
         ) : (

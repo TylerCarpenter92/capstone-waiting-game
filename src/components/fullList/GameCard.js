@@ -1,37 +1,56 @@
 import React, { Component } from "react";
 import "./FullList.css";
+import Spinner from "react-bootstrap/Spinner";
+import gameManager from "../../modules/gameManager";
 
 export default class GameCard extends Component {
+  state = {
+    isLoaded: false
+  };
+
+  componentDidMount() {
+    let gameState = {
+      isLoaded: true
+    };
+    gameManager
+      .get(this.props.game.gameGUID)
+      .then(gameDetails => (gameState.gameDetails = gameDetails))
+      .then(() => this.setState(gameState));
+  }
+
   render() {
     return (
-      <div key={this.props.game.results.id} className="card">
-        <h4>{this.props.game.results.name}</h4>
-        <section className="card-body gameCard">
-          {this.props.game.results.deck}
-          {/* <td className="card"
+      <div key={this.props.game.id} className="card">
+        <h4>{this.props.game.title}</h4>
+        {this.state.isLoaded ? (
+          <React.Fragment>
+            <section className="card-body gameCard">
+              <div>{this.state.gameDetails.results.deck}</div>
+
+              {/* <td className="card"
             dangerouslySetInnerHTML={{
-              __html: this.props.game.results.description
+              __html: this.state.gameDetails.results.description
             }}
           /> */}
-          <img
-            className="img"
-            src={this.props.game.results.image.small_url}
-            alt=""
-          />
-        </section>
+
+              <img
+                className="img"
+                src={this.state.gameDetails.results.image.small_url}
+                alt=""
+              />
+              {this.props.isEdit ? (
+                <button
+                  onClick={() => this.props.deleteGame(this.props.game.id)}
+                >
+                  delete
+                </button>
+              ) : null}
+            </section>
+          </React.Fragment>
+        ) : (
+          <Spinner animation="grow" size="sm" />
+        )}
       </div>
     );
   }
 }
-
-// <div key={this.props.list.id} className="card">
-// <h4>{this.props.gameHolder.results.name}</h4>
-// <section className="card-body gameCard">
-//   {this.props.gameHolder.results.deck}
-//   <img
-//     className="img"
-//     src={this.props.gameHolder.results.image.small_url}
-//     alt=""
-//   />
-// </section>
-// </div>

@@ -1,45 +1,59 @@
 import React, { Component } from "react";
 import "./FullList.css";
-import bookManager from "../../modules/movieManager";
+import bookManager from "../../modules/bookManager";
+import Spinner from "react-bootstrap/Spinner";
 
-export default class MovieCard extends Component {
+export default class BookCard extends Component {
   state = {
-    isLoaded: false,
-    help: ""
+    isLoaded: false
   };
 
-
-
-  componentDidUpdate() {
-    console.log("update")
-    let newState = {};
-    newState.isLoaded = true;
-    bookManager.getBook(this.props.book.bookNMB)
-      .then(book => (newState.bookDetails = book))
-      .then(() => {
-        console.log(newState);
-        this.setState(newState);
-      });
+  componentDidMount() {
+    let bookState = {
+      isLoaded: true
+    };
+    bookManager
+      .getBook(this.props.book.bookNMB)
+      .then(bookDetails => (bookState.bookDetails = bookDetails))
+      .then(() => this.setState(bookState));
   }
-
-  componentWillUnmount(){
-    console.log("bookCard Unmounted")
-  }
-
-
 
   render() {
+    console.log(this.state);
     return (
       <div key={this.props.book.id} className="card">
-        <h4>{this.props.book.volumeInfo.title}</h4>
-          <section className="card-body gameCard">
-            <td dangerouslySetInnerHTML={{__html: this.props.book.volumeInfo.description}} />
-            {/* {this.props.book.volumeInfo.description} */}
-            <img className="img" src={this.props.book.volumeInfo.imageLinks.small} />
-          </section>
+        <h4>{this.props.book.title}</h4>
+        {this.state.isLoaded ? (
+          <React.Fragment>
+            <section className="card-body gameCard">
+
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: this.state.bookDetails.volumeInfo.description
+                  }}
+                />
+              
+
+              {/* {this.state.bookDetails.volumeInfo.description} */}
+              <img
+                className="img"
+                src={this.state.bookDetails.volumeInfo.imageLinks.small}
+                alt=""
+              />
+            </section>
+              {this.props.isEdit ? (
+                <button className="deleteBtn"
+                  onClick={() => this.props.deleteBook(this.props.book.id)}
+                >
+                  delete
+                </button>
+              ) : null}
+          </React.Fragment>
+        ) : (
+          <Spinner animation="grow" size="sm" />
+          // this.getBookDetails(this.props.book)
+        )}
       </div>
     );
   }
 }
-
-{/* <img className="img" src={this.props.book.volumeInfo.imageLinks.small} /> */}
